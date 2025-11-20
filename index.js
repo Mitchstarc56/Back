@@ -1,13 +1,13 @@
 const STREAMS = {
   "st": {
-    mpd: "https://entral.vid.117f315de535f/manifest.mpd",
+    mpd: "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
     clearkeys: "7e9239c1982d984a002df3ed049d0756:1b8a17598129a3618535c8fb05f103fe"
   },
-  "stream2": {
-    mpd: "https://example.com/another/manifest.mpd", 
-    clearkeys: "keyid1:keyvalue1"
+  "ssn1": {
+    mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763699291~acl=%2F*~id=b04a267c-3278-4378-a231-8792e3a783d1~data=hdntl,dWlkPXNWa2pnc3w2ZjZmZTIwMS02NWUyLTRmNWMtOWY3OC01MTBlNDU0NzY0YWUmaXA9MjAzLjk2LjIxOC4yNCZleHA9MTc2MzY5OTMyMCZlaWQ9MjE5MDI4JmNpZD1kY2Uuc2t5bnomb2lkPTMxOCZ0eXBlPUxJVkU~hmac=9dc279c9571fe1c1bde4a9daf1d386d95e7faa2ee2d09eac05fde1e9c79a09fa/dash/live/2093664/219028-311264/manifest-d.mpd", 
+    clearkeys: "2e2636daa74141b68cc14882ea3ff82b:0961f48287324adbb4b7ff3c9d82b3c9"
   },
-  "stream3": {
+  "ssn2": {
     mpd: "https://example.com/third/manifest.mpd",
     clearkeys: "keyid2:keyvalue2"
   }
