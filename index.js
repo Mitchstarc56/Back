@@ -1,24 +1,24 @@
+// Worker: paste this as your worker entry file
 const STREAMS = {
-  "st": {
-    mpd: "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/bcj3iscpd6/out/v1/fcd137b391214f7cb99dd4d7be90ca87/cenc.mpd",
-    clearkeys: "7e9239c1982d984a002df3ed049d0756:1b8a17598129a3618535c8fb05f103fe"
-  },
-  "ssn1": {
-    mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763699291~acl=%2F*~id=b04a267c-3278-4378-a231-8792e3a783d1~data=hdntl,dWlkPXNWa2pnc3w2ZjZmZTIwMS02NWUyLTRmNWMtOWY3OC01MTBlNDU0NzY0YWUmaXA9MjAzLjk2LjIxOC4yNCZleHA9MTc2MzY5OTMyMCZlaWQ9MjE5MDI4JmNpZD1kY2Uuc2t5bnomb2lkPTMxOCZ0eXBlPUxJVkU~hmac=9dc279c9571fe1c1bde4a9daf1d386d95e7faa2ee2d09eac05fde1e9c79a09fa/dash/live/2093664/219028-311264/manifest-d.mpd", 
-    clearkeys: "2e2636daa74141b68cc14882ea3ff82b:0961f48287324adbb4b7ff3c9d82b3c9"
-  },
-  "t3": {
+  "t1": {
     mpd: "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
     clearkeys: "d0f2e5c39e70c18f29bf77768a1ad89a:d6853c51fcf37a18905f0609972395d7"
+  },
+  "ssn1": {
+    mpd: "https://abbbmftaaaaaaaamgdshloqn26zka.otte.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/7tql9fsdjo/out/v1/46b477f97cd742b087401526419edc67/cenc.mpd",
+    clearkeys: "8ca5d080818584785c022021b8fe8179:60261514a077c36fa5e5933fb6049880"
+  },
+  "ssn2": {
+    mpd: "https://example.com/third/manifest.mpd",
+    clearkeys: "keyid2:keyvalue2"
   }
-  
 };
 
 const ALLOWED_DOMAINS = [
   "https://criccentral.pages.dev",
-  "https://cricentral.pages.dev",
-  "https://criccentral.netlify.app",
-  "http://cricentral.netlify.app" // dev
+  "https://entral.pages.dev",
+  "https://entral.netlify.app",
+  "http://entral.netlify.app" // dev
 ];
 
 function corsHeaders() {
