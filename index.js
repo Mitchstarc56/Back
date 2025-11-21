@@ -11,39 +11,57 @@ const STREAMS = {
     mpd: "https://example.com/third/manifest.mpd",
     clearkeys: "keyid2:keyvalue2"
   }
-  // Add more streams as needed
+  
 };
 
 const ALLOWED_DOMAINS = [
   "https://criccentral.pages.dev",
   "https://cricentral.pages.dev",
   "https://criccentral.netlify.app",
-  "http://cricentral.netlify.app" // for local development
+  "http://cricentral.netlify.app" // dev
 ];
+
+function corsHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*', // change to exact origin(s) for stricter security
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Player-Fetch, Authorization'
+  };
+}
 
 export default {
   async fetch(request, env, ctx) {
+    // Always handle OPTIONS preflight quickly
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders()
+      });
+    }
+
     const referer = request.headers.get('referer') || '';
     const origin = request.headers.get('origin') || '';
-    
-    let isAllowed = false;
+    const secFetchMode = request.headers.get('sec-fetch-mode') || '';
+    const playerHeader = request.headers.get('x-player-fetch') || '';
+
+    // domain allowlist check
+    let isAllowedDomain = false;
     for (let domain of ALLOWED_DOMAINS) {
       if (referer.startsWith(domain) || origin.startsWith(domain)) {
-        isAllowed = true;
+        isAllowedDomain = true;
         break;
       }
     }
 
-    if (!isAllowed) {
+    // Require: allowed domain + JS fetch mode + custom header
+    if (!(isAllowedDomain && secFetchMode === 'cors' && playerHeader === '1')) {
       return new Response(JSON.stringify({
         success: false,
         message: "Unauthorized request"
       }), {
         status: 403,
-        headers: { 
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        }
+        headers: corsHeaders()
       });
     }
 
@@ -51,19 +69,9 @@ export default {
     const path = url.pathname;
     const streamId = path.split('/').pop();
 
-    const headers = {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    };
+    const headers = corsHeaders();
 
-    // Handle CORS preflight
-    if (request.method === 'OPTIONS') {
-      return new Response(null, { headers });
-    }
-
-    // Return all streams
+    // Return whole list
     if (!streamId || streamId === 'streams') {
       return new Response(JSON.stringify({
         success: true,
@@ -74,23 +82,24 @@ export default {
 
     // Return specific stream
     if (STREAMS[streamId]) {
-      // Parse clearkeys into object format
-      const clearkeys = {};
-      const keyPairs = STREAMS[streamId].clearkeys.split(':');
-      if (keyPairs.length === 2) {
-        clearkeys[keyPairs[0]] = keyPairs[1];
+      // Parse clearkeys string into an object: "keyid:keyvalue"
+      const clearkeysObj = {};
+      const ck = STREAMS[streamId].clearkeys || '';
+      const parts = ck.split(':');
+      if (parts.length === 2 && parts[0]) {
+        clearkeysObj[parts[0]] = parts[1];
       }
 
       return new Response(JSON.stringify({
         success: true,
         id: streamId,
         mpd: STREAMS[streamId].mpd,
-        clearkeys: clearkeys,
-        clearkeys_string: STREAMS[streamId].clearkeys // Also return as string for convenience
+        clearkeys: clearkeysObj,
+        clearkeys_string: ck
       }), { headers });
     }
 
-    // Stream not found
+    // Not found
     return new Response(JSON.stringify({
       success: false,
       message: "Stream not found",
@@ -100,4 +109,4 @@ export default {
       headers
     });
   }
-}
+};
