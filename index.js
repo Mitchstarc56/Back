@@ -16,9 +16,9 @@ const STREAMS = {
 
 const ALLOWED_DOMAINS = [
   "https://criccentral.pages.dev",
-  "https://entral.pages.dev",
-  "https://entral.netlify.app",
-  "http://entral.netlify.app" // dev
+  "https://cricentral.pages.dev",
+  "https://criccentral.netlify.app",
+  "http://cricentral.netlify.app" // dev
 ];
 
 function corsHeaders() {
