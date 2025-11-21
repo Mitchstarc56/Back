@@ -11,6 +11,10 @@ const STREAMS = {
   "sn1": {
     mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763739642~acl=%2f*~id=508ae58f-bb26-4f5e-985d-3b09d3415f3d~data=hdntl,dWlkPXNWa2pnc3w2ZjZmZTIwMS02NWUyLTRmNWMtOWY3OC01MTBlNDU0NzY0YWUmaXA9MTIzLjI1NS40OC4xNzImZXhwPTE3NjM3Mzk2NzEmZWlkPTIxOTAyNiZjaWQ9ZGNlLnNreW56Jm9pZD0zMTgmdHlwZT1MSVZF~hmac=1d5b428d4673b60f57953da902ae0a0d950fda9cf970adbe298ce7c5ae08dae5/dash/live/2093662/219026-311262/manifest-d.mpd",
     clearkeys: "aefc2c8d1c8840f1b6981f856c9269ba:cf8ea114c45b4d6596b2748258ab74d6"
+  },
+  "asc": {
+    mpd: "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash-sd/enc/unphwrnhdm/out/v1/b099c32d36304e01834cc9df1b600a30/cenc-sd.mpd",
+    clearkeys: "7478fc940c1a5f18056cd8dd1e32786c:54aeadaa13fa9ef051d68990894ceec4"
   }
 };
 
