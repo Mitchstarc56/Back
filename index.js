@@ -1,6 +1,6 @@
 const STREAMS = {
   "sn4": {
-    mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763869290~acl=%2f*~id=2a3ad11e-3904-4a68-8017-0f8ff38f7e18~data=hdntl,dWlkPTMxMDczN3xkY2Uuc2t5bnomaXA9MTE0LjIzLjExOC44MiZleHA9MTc2Mzg2OTMxOCZlaWQ9MjE5MDI5JmNpZD1kY2Uuc2t5bnomb2lkPTMxOCZ0eXBlPUxJVkU~hmac=e35af710300a90903b974ea7d5a6e3f240391b96d1a3962c4bdaef96b2b64cf7/dash/live/2093660/219029-311256/manifest-d.mpd",
+    mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763862928~acl=%2f*~id=6547d31b-5e65-4866-b89e-8e97e579d216~data=hdntl,dWlkPXNWa2pnc3w2ZjZmZTIwMS02NWUyLTRmNWMtOWY3OC01MTBlNDU0NzY0YWUmaXA9MTIzLjI1NS40OC4xNzImZXhwPTE3NjM4NjI5NTgmZWlkPTIxOTAyNiZjaWQ9ZGNlLnNreW56Jm9pZD0zMTgmdHlwZT1MSVZF~hmac=966e94d7554df8f38acd24879faecb3f5ad533e2a1c4376df1ec47f6af4c5f75/dash/live/2093660/219029-311256/manifest-d.mpd",
     clearkeys: "278b8746b7c7410e901af0aa3774f037:15e1142d647b474ebbd49e41efa2a9d7"
   },
   "wc": {
