@@ -1,9 +1,17 @@
 // Worker: paste this as your worker entry file
 const STREAMS = {
-  "w": {
-    mpd: "https://abbbmftaaaaaaaamgdshloqn26zka.otte.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/7tql9fsdjo/out/v1/46b477f97cd742b087401526419edc67/cenc.mpd",
-    clearkeys: "8ca5d080818584785c022021b8fe8179:60261514a077c36fa5e5933fb6049880"
+  "sn4": {
+    mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763869290~acl=%2f*~id=2a3ad11e-3904-4a68-8017-0f8ff38f7e18~data=hdntl,dWlkPTMxMDczN3xkY2Uuc2t5bnomaXA9MTE0LjIzLjExOC44MiZleHA9MTc2Mzg2OTMxOCZlaWQ9MjE5MDI5JmNpZD1kY2Uuc2t5bnomb2lkPTMxOCZ0eXBlPUxJVkU~hmac=e35af710300a90903b974ea7d5a6e3f240391b96d1a3962c4bdaef96b2b64cf7/dash/live/2093660/219029-311256/manifest-d.mpd",
+    clearkeys: "278b8746b7c7410e901af0aa3774f037:15e1142d647b474ebbd49e41efa2a9d7"
   },
+  "wc": {
+    mpd: "https://otte.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/mitifmm4g9/out/v1/a62499aa43894024a5e9870e16a56732/cenc.mpd",
+    clearkeys: "942b3db5d08871706ddeb9302c4e2a29:d7c25442d9a7b0da9fda160c9dbe1e04"
+  },
+  "wca": {
+    mpd: "https://otte.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/hx6mmf5xx2/out/v1/28e92a81848f42c7ba84dc42feb210de/cenc.mpd",
+    clearkeys: "97b5f6443d609b8fdca598393297483b:5d1ede61175a2286360acda28f038e6c"
+  },
   "sn1": {
     mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763862928~acl=%2f*~id=6547d31b-5e65-4866-b89e-8e97e579d216~data=hdntl,dWlkPXNWa2pnc3w2ZjZmZTIwMS02NWUyLTRmNWMtOWY3OC01MTBlNDU0NzY0YWUmaXA9MTIzLjI1NS40OC4xNzImZXhwPTE3NjM4NjI5NTgmZWlkPTIxOTAyNiZjaWQ9ZGNlLnNreW56Jm9pZD0zMTgmdHlwZT1MSVZF~hmac=966e94d7554df8f38acd24879faecb3f5ad533e2a1c4376df1ec47f6af4c5f75/dash/live/2093662/219026-311262/manifest-d.mpd",
     clearkeys: "aefc2c8d1c8840f1b6981f856c9269ba:cf8ea114c45b4d6596b2748258ab74d6"
