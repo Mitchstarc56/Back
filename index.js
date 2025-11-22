@@ -1,4 +1,3 @@
-// Worker: paste this as your worker entry file
 const STREAMS = {
   "sn4": {
     mpd: "https://dice-live-oc.akamaized.net/hdntl=exp=1763869290~acl=%2f*~id=2a3ad11e-3904-4a68-8017-0f8ff38f7e18~data=hdntl,dWlkPTMxMDczN3xkY2Uuc2t5bnomaXA9MTE0LjIzLjExOC44MiZleHA9MTc2Mzg2OTMxOCZlaWQ9MjE5MDI5JmNpZD1kY2Uuc2t5bnomb2lkPTMxOCZ0eXBlPUxJVkU~hmac=e35af710300a90903b974ea7d5a6e3f240391b96d1a3962c4bdaef96b2b64cf7/dash/live/2093660/219029-311256/manifest-d.mpd",
@@ -93,7 +92,6 @@ export default {
     // Require: allowed domain + JS fetch mode + custom header
     if (!(isAllowedDomain && secFetchMode === 'cors' && playerHeader === '1')) {
       return new Response(JSON.stringify({
-        success: false,
         message: "Unauthorized request"
       }), {
         status: 403,
